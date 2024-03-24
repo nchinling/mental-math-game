@@ -1,0 +1,30 @@
+<p>main works!</p>
+<div class = "container-fluid">
+
+    <div *ngIf="(topScoreData$ | async) as topScoreData" style="overflow-x:auto;">
+        <div *ngIf="topScoreData.length > 0">
+        <h4>Top Score (Level 1)</h4>
+        
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th><th>Name</th><th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of topScoreData; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{ data.name}}</td>
+                  <td>{{ data.score }}</td>
+                </tr>
+              </tbody>
+            </table> 
+          </div>
+          </div>
+
+
+
+
+
+
+</div>
