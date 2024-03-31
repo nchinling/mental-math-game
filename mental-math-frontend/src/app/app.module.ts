@@ -10,12 +10,14 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TopScoreService } from './service/topscore.service';
 import { PlayService } from './service/play.service';
+import { QuestionComponent } from './components/question.component';
 
 
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent, title: 'Welcome to Math Dash' },
   { path: 'play', component: PlayComponent, title: 'Play' },
+  { path: 'question', component: QuestionComponent, title: 'Question' },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ]
 @NgModule({
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
     PlayComponent,
     NavbarComponent,
     MainComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule,

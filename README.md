@@ -1,4 +1,4 @@
-# Math Dash // in progress
+# Math Dash - in progress
 Math Dash is an arithmetic math game for people of all ages. Players attempt to complete as many arithmetic math questions in 1 minute. There are 3 levels to pick from, with varying levels of difficulty. 
 
 ## Tech Stack

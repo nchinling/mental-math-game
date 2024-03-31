@@ -1,1 +1,9 @@
-<p>play works!</p>
+<form [formGroup]="nameForm">
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+    </label>
+    <button (click)="getQuestion()">Get Question</button>
+    <button (click)="submitName()">Submit Name</button>
+  </form>
+  

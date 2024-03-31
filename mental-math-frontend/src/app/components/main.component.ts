@@ -13,9 +13,9 @@ export class MainComponent {
   topScoreData$!:Observable<TopScoreData[]>
   topScoreSvc = inject(TopScoreService)
 
-  ngOnInit():void{
-    this.topScoreData$ = this.topScoreSvc.getTopScoreData();
+  // ngOnInit():void{
+  //   this.topScoreData$ = this.topScoreSvc.getTopScoreData();
 
-  }
+  // }
 
 }

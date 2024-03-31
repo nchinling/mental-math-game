@@ -5,3 +5,8 @@ export interface TopScoreData {
     date: Date
 
 }
+
+export interface Question{
+    question: string
+    answer: number
+}
