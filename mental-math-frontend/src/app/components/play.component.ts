@@ -19,18 +19,15 @@ export class PlayComponent implements OnInit {
       name: this.fb.control<string>('', [Validators.required, Validators.pattern('[a-zA-Z0-9_]+')]),
     })
   }
+  
 
-  submitName() {
+  getQuestion(){
     if (this.nameForm.valid) {
       const userName = this.nameForm.get('name')?.value;
       console.log('Submitted Name:', userName);
     } else {
       console.log('Invalid Form');
     }
-  }
-  
-
-  getQuestion(){
     this.router.navigate(['/question'])
   }
 

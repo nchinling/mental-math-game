@@ -1,6 +1,6 @@
 import { Injectable, inject } from "@angular/core";
-import { Question } from "../models";
-import { HttpClient } from "@angular/common/http";
+import { MarkedQuestion, Question } from "../models";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Observable, tap } from "rxjs";
 
@@ -15,21 +15,20 @@ export class PlayService {
 
     getQuestion(): Observable<Question> {
 
-        // const form = new HttpParams()
-        //   .set("username", username)
-        //   .set("password", password)
-    
-        // const headers = new HttpHeaders()
-        //   .set("Content-Type", "application/x-www-form-urlencoded")
-    
         return this.http.get<Question>(`${URL_API_MATH_GAME_SERVER}/generate-question`).pipe(
-        //   tap(response => {
-        //     this.question = response.question;
-
-        //   })
         );
-        // return this.http.get<String>(`${URL_API_MATH_GAME_SERVER}/generate-question`)
-      }
+    }
+
+    checkAnswer(answer: string): Observable<MarkedQuestion>{
+      const form = new HttpParams()
+      .set("answer", answer)
+
+      const headers = new HttpHeaders()
+      .set("Content-Type", "application/x-www-form-urlencoded")
+      
+      return this.http.post<MarkedQuestion>(`${URL_API_MATH_GAME_SERVER}/check-answer`, form.toString(), {headers})
+
+    }
 
 
 }

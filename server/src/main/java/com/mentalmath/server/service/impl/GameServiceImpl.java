@@ -14,8 +14,8 @@ public class GameServiceImpl implements GameService {
     @Override
     public String generateQuestion(){
     Random random = new Random();
-    int num1 = random.nextInt(10);
-    int num2 = random.nextInt(10);
+    int num1 = random.nextInt(10)+1;
+    int num2 = random.nextInt(10)+1;
 
     String[] operators = {"+", "-", "*", "/"};
 
@@ -41,7 +41,7 @@ public class GameServiceImpl implements GameService {
 
 
     @Override
-    public String checkAnswer(int answer){
+    public String checkAnswer(double answer){
         if (answer == currentAnswer){
             return "Correct!";
         }

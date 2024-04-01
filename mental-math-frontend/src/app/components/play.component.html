@@ -1,9 +1,11 @@
-<form [formGroup]="nameForm">
+<div class="container">
+  <form [formGroup]="nameForm" (submit)="getQuestion()">
     <label>
       Name:
-      <input type="text" formControlName="name">
-    </label>
-    <button (click)="getQuestion()">Get Question</button>
-    <button (click)="submitName()">Submit Name</button>
-  </form>
+      <input type="text" formControlName="name" #nameInput>
+    </label><br>
+    <button type="submit">Start!</button>
+</form>
+</div>
+
   

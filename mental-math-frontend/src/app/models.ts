@@ -10,3 +10,7 @@ export interface Question{
     question: string
     answer: number
 }
+
+export interface MarkedQuestion {
+    markedQuestion: string
+}
