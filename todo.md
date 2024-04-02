@@ -6,4 +6,5 @@
 
 2 April 
 - log name globally
-- implement timer
+- send results (username and score) to server
+- save results

@@ -14,3 +14,7 @@ export interface Question{
 export interface MarkedQuestion {
     markedQuestion: string
 }
+
+export interface SaveScoreResponse {
+    message: string
+}

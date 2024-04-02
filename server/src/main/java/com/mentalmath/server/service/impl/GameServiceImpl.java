@@ -1,5 +1,6 @@
 package com.mentalmath.server.service.impl;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import com.mentalmath.server.service.GameService;
 @Service
 public class GameServiceImpl implements GameService {
     
-    private int currentAnswer;
+    private double currentAnswer;
     
     @Override
     public String generateQuestion(){
@@ -32,10 +33,14 @@ public class GameServiceImpl implements GameService {
             currentAnswer = num1 * num2;
             break;
         case "/":
-            currentAnswer = num1 / num2;
+            currentAnswer = (double) num1 / num2;
+            DecimalFormat df = new DecimalFormat("#.##");
+            String formattedAnswer = df.format(currentAnswer);
+            currentAnswer = Double.parseDouble(formattedAnswer);
             break;
         
         }
+        System.out.println("The current answer is: " + currentAnswer);
         return num1 + " " + operator + " " + num2 + " = ";
     }
 

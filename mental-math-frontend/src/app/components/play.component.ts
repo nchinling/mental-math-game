@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TopScoreService } from '../service/topscore.service';
 
 @Component({
   selector: 'app-play',
@@ -12,6 +13,7 @@ export class PlayComponent implements OnInit {
   nameForm!: FormGroup
   fb = inject(FormBuilder)
   router = inject(Router)
+  topScoreSvc = inject(TopScoreService)
 
   ngOnInit(): void {
    
@@ -25,6 +27,7 @@ export class PlayComponent implements OnInit {
     if (this.nameForm.valid) {
       const userName = this.nameForm.get('name')?.value;
       console.log('Submitted Name:', userName);
+      this.topScoreSvc.name = userName
     } else {
       console.log('Invalid Form');
     }

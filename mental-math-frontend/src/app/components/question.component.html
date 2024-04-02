@@ -5,12 +5,15 @@
   Points: {{points}}
   <form [formGroup]="answerForm" (submit)="submitAnswer()">
     <div *ngIf="question$ | async as question">
-      <p>{{ question.question }} <input type="text" formControlName="answer"> {{endMessage}}</p>
+      <p>{{ question.question }} <input type="text" formControlName="answer" autofocus> {{endMessage}}</p>
     </div>
     <button type="submit" [disabled]="disableSubmitButton">Submit</button>
   </form>
   <div *ngIf="markedQuestion$ | async as markedQuestion" [style.color]="markedQuestion.markedQuestion === 'Correct!' ? 'limegreen' : 'red'">
     {{ markedQuestion.markedQuestion }}
+  </div>
+  <div *ngIf="saveScore$ | async as saveScore">
+    {{ saveScore.message}}
   </div>
 
   <button *ngIf="timeUp" (click)="redirectToPlay()">Play again!</button>
