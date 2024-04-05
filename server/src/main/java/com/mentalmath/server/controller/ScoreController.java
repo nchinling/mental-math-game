@@ -1,5 +1,6 @@
 package com.mentalmath.server.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mentalmath.server.model.Score;
+import com.mentalmath.server.repository.ScoreRepository;
+import com.mentalmath.server.service.ScoreService;
+
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 
@@ -19,20 +25,27 @@ import jakarta.json.JsonObject;
 @CrossOrigin(origins="*")
 public class ScoreController {
     
+    
+    @Autowired
+    private ScoreService scoreService;
 
-    @PostMapping(path="/save-score", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(path="/save-score",  consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<String> saveScore(@RequestBody MultiValueMap<String, String> form){
-        // String question = gameService.generateQuestion();
+    public ResponseEntity<String> saveScore(@RequestBody Score score){
 
-        int score = Integer.parseInt(form.getFirst("score"));
-        String name = form.getFirst("name"); 
-        System.out.println("The score received is: " + score);
-        JsonObject response = null;
-        response = Json.createObjectBuilder()
-                .add("message", "score saved!")
-                .build();
+        try {
+            System.out.println("The score is: "+ score.getScore());
+            String saveScore = scoreService.save(score);
+            
+            JsonObject response = null;
+            response = Json.createObjectBuilder()
+                    .add("message", "score saved!")
+                    .build();
+    
+            return ResponseEntity.ok(response.toString());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error saving score: " + e.getMessage());
+        }
 
-        return ResponseEntity.ok(response.toString());
     }
 }

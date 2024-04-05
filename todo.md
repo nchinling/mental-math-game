@@ -8,3 +8,11 @@
 - log name globally
 - send results (username and score) to server
 - save results
+
+4 April
+- managed to save in h2 db and view results
+- beautified with css
+
+5 April
+- retrieve top 10 scores
+

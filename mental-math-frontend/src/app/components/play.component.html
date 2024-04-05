@@ -1,11 +1,12 @@
-<div class="container">
+<div class="container d-flex justify-content-center align-items-center">
   <form [formGroup]="nameForm" (submit)="getQuestion()">
-    <label>
-      Name:
-      <input type="text" formControlName="name" #nameInput>
-    </label><br>
-    <button type="submit">Start!</button>
-</form>
+    <div class="form-group">
+      <label for="nameInput" class="name-label">Your Name:</label>
+      <input id="nameInput" type="text" formControlName="name" class="form-control name-input" #nameInput>
+    </div>
+    <button class="btn btn-primary" type="submit">Start!</button>
+  </form>
+  
 </div>
 
   

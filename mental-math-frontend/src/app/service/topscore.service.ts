@@ -25,13 +25,25 @@ export class TopScoreService {
 
     saveScore(score: number): Observable<SaveScoreResponse>{
       console.info('>>>> saving score in game server...')
-      const body = new HttpParams()
-      .set("score", score)
-      .set("name", this.name)
+      // const body = new HttpParams()
+      // .set("id", 1)
+      // .set("score", score)
+      // .set("name", this.name)
+      // .set("level", 1)
+      const payload = {
+        score: score,
+        name: this.name,
+        level: 1
+      };
+      // const body = new HttpParams()
+      // .set("id", 1)
+      // .set("score", score)
+      // .set("name", this.name)
+      // .set("level", 1)
       const headers = new HttpHeaders()
-      .set("Content-Type", "application/x-www-form-urlencoded")
+      .set("Content-Type", "application/json")
       
-      return this.http.post<SaveScoreResponse>(`${URL_API_MATH_GAME_SERVER}/save-score`, body.toString(), {headers})
+      return this.http.post<SaveScoreResponse>(`${URL_API_MATH_GAME_SERVER}/save-score`, payload, {headers})
 
     }
 

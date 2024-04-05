@@ -1,0 +1,22 @@
+.name-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #df168e; /* Change the color to your preference */
+    margin-bottom: 10px; /* Adjust the spacing between label and input */
+  }
+  
+  .form-control {
+    font-size: 18px;
+    height: 40px; /* Adjust the height of the text box */
+  }
+
+  .name-input {
+    width: 400px; /* Adjust the width to your preference */
+  }
+  
+  
+  .btn-primary {
+    font-size: 18px;
+  }
+  
