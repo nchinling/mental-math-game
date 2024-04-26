@@ -3,10 +3,18 @@
     <div class="form-group">
       <label for="nameInput" class="name-label">Your Name:</label>
       <input id="nameInput" type="text" formControlName="name" class="form-control name-input" #nameInput>
+      <span *ngIf="invalidField('name')" class="invalid-field">
+        Please provide a name
+    </span>
+
     </div>
-    <button class="btn btn-primary" type="submit">Start!</button>
+    <button class="btn btn-primary" type="submit" [disabled]="nameForm.invalid">Start!</button>
   </form>
-  
+  <!-- <img src="../../assets/static/images/boxertocat_octodex.jpg" alt="Description"> -->
+  <img src="../../assets/static/images/boxertocat_octodex.jpg" alt="Description" class="image">
 </div>
+
+<!-- <img src="../../assets/static/images/boxertocat_octodex.jpg" alt="Description" class="image"> -->
+
 
   

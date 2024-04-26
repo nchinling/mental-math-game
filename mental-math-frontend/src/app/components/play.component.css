@@ -19,4 +19,14 @@
   .btn-primary {
     font-size: 18px;
   }
+
+  .invalid-field {
+    font-style: italic;
+    color: #1363DF; 
+  }
+  
+  .image {
+    width: 350px; /* Adjust width to your preference */
+    height: auto; /* Maintain aspect ratio */
+  }
   

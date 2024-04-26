@@ -1,5 +1,8 @@
 package com.mentalmath.server.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +23,9 @@ public class ScoreServiceImpl implements ScoreService {
     }
 
     @Override
-    public String retrieve(){
-        return "retrieved!";
+    public List<Score> retrieve(){
+        List<Score> topScores = new ArrayList();
+        topScores = scoreRepo.findAll();
+        return topScores;
     }
 }

@@ -34,4 +34,11 @@ export class PlayComponent implements OnInit {
     this.router.navigate(['/question'])
   }
 
+
+  invalidField(ctrlName:string): boolean{
+    return !!(this.nameForm.get(ctrlName)?.invalid && 
+          this.nameForm.get(ctrlName)?.dirty)
+  }
+
+
 }

@@ -1,5 +1,7 @@
 package com.mentalmath.server.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,7 @@ import com.mentalmath.server.repository.ScoreRepository;
 import com.mentalmath.server.service.ScoreService;
 
 import jakarta.json.Json;
+import jakarta.json.JsonArrayBuilder;
 import jakarta.json.JsonObject;
 
 @Controller
@@ -41,10 +44,35 @@ public class ScoreController {
             response = Json.createObjectBuilder()
                     .add("message", "score saved!")
                     .build();
-    
             return ResponseEntity.ok(response.toString());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error saving score: " + e.getMessage());
+        }
+
+    }
+
+    @GetMapping(path="/topscore",  consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseEntity<String> getTopScore(){
+
+        try {
+            JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
+            List<Score> topScore = scoreService.retrieve();
+            topScore.stream()
+                .map(eachScore -> Json.createObjectBuilder()
+                            .add("id", eachScore.getId())
+                            .add("name", eachScore.getName())
+                            .add("level", eachScore.getLevel())
+                            .add("score", eachScore.getScore())
+                            .build()
+                )
+			.forEach(json -> arrBuilder.add(json));
+            System.out.println("Returning top 10 scores: "+ arrBuilder.build().toString() );
+
+		    return ResponseEntity.ok(arrBuilder.build().toString());
+            
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error getting score: " + e.getMessage());
         }
 
     }

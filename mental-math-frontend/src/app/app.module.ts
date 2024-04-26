@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopScoreService } from './service/topscore.service';
 import { PlayService } from './service/play.service';
 import { QuestionComponent } from './components/question.component';
+import { RankingComponent } from './components/ranking.component';
 
 
 
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: '', component: MainComponent, title: 'Welcome to Math Dash' },
   { path: 'play', component: PlayComponent, title: 'Play' },
   { path: 'question', component: QuestionComponent, title: 'Question' },
+  { path: 'rank', component: RankingComponent, title: 'Rank' },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ]
 @NgModule({
@@ -27,6 +29,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     MainComponent,
     QuestionComponent,
+    RankingComponent,
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule,

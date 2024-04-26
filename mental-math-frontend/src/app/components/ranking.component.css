@@ -1,6 +1,6 @@
 .fiery-text {
     font-family: 'Arial', sans-serif;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bold;
     color: transparent; /* Set text color to transparent */
     background: linear-gradient(to right, #ff5733, #ffce38, #ff5733); /* Create a gradient with fiery colors */
@@ -15,10 +15,3 @@
       background-position: right bottom; /* Move gradient position */
     }
   }
-  
-  .background-image {
-    background-image: url("../../assets/static/images/parentocats.png");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-}

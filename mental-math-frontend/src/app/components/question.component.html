@@ -1,22 +1,28 @@
 
-  <div class="container">
-    <p>Time remaining: {{ remainingTime }} seconds</p>
-    <p>Points: {{points}}</p>
+  <div class="container-fluid">
+    <p class="time-remaining">Time: {{ remainingTime }} seconds</p>
+    <p class="points">Points: {{points}}</p><br>
     
-    <form [formGroup]="answerForm" (submit)="submitAnswer()">
+    <form [formGroup]="answerForm" (submit)="submitAnswer()" class="form-container">
       <div *ngIf="question$ | async as question">
-        <p>{{ question.question }} <input type="text" formControlName="answer" autofocus> {{endMessage}}</p>
-      </div>
-      <button class="btn btn-success" type="submit" [disabled]="disableSubmitButton">Submit</button>
+          <span class="question">{{ question.question }}</span>
+        </div>
+      <input type="text" formControlName="answer" class="form-control answer-input">&nbsp;
+      <span *ngIf="markedQuestion$ | async as markedQuestion"  class="marked-question" [style.color]="markedQuestion.markedQuestion === 'Correct!' ? 'limegreen' : 'red'">
+        {{ markedQuestion.markedQuestion }}&nbsp;&nbsp; 
+      </span>
+      <button class="btn btn-primary" type="submit" [disabled]="disableSubmitButton">Submit</button>
     </form>
-    <div *ngIf="markedQuestion$ | async as markedQuestion" [style.color]="markedQuestion.markedQuestion === 'Correct!' ? 'limegreen' : 'red'">
-      {{ markedQuestion.markedQuestion }}
+    <div class = "container">
+      <span class="end-message">
+        {{endMessage}} 
+      </span>
+      <div *ngIf="saveScore$ | async as saveScore">
+        {{ saveScore.message}}
+      </div>
+  
+      <button class="btn btn-danger" *ngIf="timeUp" (click)="redirectToPlay()">Play again!</button>
     </div>
-    <div *ngIf="saveScore$ | async as saveScore">
-      {{ saveScore.message}}
-    </div>
-
-    <button class="btn btn-danger" *ngIf="timeUp" (click)="redirectToPlay()">Play again!</button>
 
   </div>
 
