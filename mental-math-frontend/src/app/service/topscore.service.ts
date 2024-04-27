@@ -29,7 +29,7 @@ export class TopScoreService {
     //     return response;
     // }
 
-      getTopScoreData(): Observable<TopScoreData[]> {
+    getTopScoreData(): Observable<TopScoreData[]> {
       console.info('>>>>>>sending to Game server...');
       const headers = new HttpHeaders().set("Content-Type", "application/json");
   

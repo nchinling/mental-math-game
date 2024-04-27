@@ -16,6 +16,18 @@ export class RankingComponent implements OnInit {
   ngOnInit(): void {
     this.topScoreData$ = this.topScoreSvc.getTopScoreData()
     
+    this.topScoreData$.subscribe(
+      (data: TopScoreData[]) => {
+        if (data.length === 0) {
+          console.log("Data is empty.");
+        } else {
+          console.log("Data returned:", data);
+        }
+      },
+      (error) => {
+        console.error("Error fetching top scores:", error);
+      }
+    );
 
   }
 

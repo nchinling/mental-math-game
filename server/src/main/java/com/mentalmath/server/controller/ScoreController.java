@@ -58,6 +58,10 @@ public class ScoreController {
         try {
             JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
             List<Score> topScore = scoreService.retrieve();
+            // for (Score score: topScore){
+            //     System.out.println("The score is: " + score);
+            // }
+
             topScore.stream()
                 .map(eachScore -> Json.createObjectBuilder()
                             .add("id", eachScore.getId())
@@ -67,9 +71,9 @@ public class ScoreController {
                             .build()
                 )
 			.forEach(json -> arrBuilder.add(json));
-            System.out.println("Returning top 10 scores: "+ arrBuilder.build().toString() );
+            String returnedArray = arrBuilder.build().toString();
 
-		    return ResponseEntity.ok(arrBuilder.build().toString());
+		    return ResponseEntity.ok(returnedArray);
             
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error getting score: " + e.getMessage());

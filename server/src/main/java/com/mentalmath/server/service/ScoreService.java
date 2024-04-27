@@ -7,4 +7,6 @@ import com.mentalmath.server.model.Score;
 public interface ScoreService {
     String save(Score score);
     List<Score> retrieve();
+
+
 }
