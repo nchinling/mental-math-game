@@ -3,6 +3,7 @@ package com.mentalmath.server.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.mentalmath.server.model.Score;
@@ -21,11 +22,18 @@ public class ScoreServiceImpl implements ScoreService {
         return "saved!";
     }
 
+
+    // @Override
+    // public List<Score> retrieve(){
+    //     List<Score> topScores = new ArrayList();
+    //     topScores = scoreRepo.findTop10ByOrderByScoreDesc();
+    //     return topScores;
+    // }
+
     @Override
     public List<Score> retrieve(){
-        List<Score> topScores = new ArrayList();
-        topScores = scoreRepo.findAll();
-        return topScores;
+        return scoreRepo.findTop10ByOrderByScoreDesc();
     }
+
 
 }

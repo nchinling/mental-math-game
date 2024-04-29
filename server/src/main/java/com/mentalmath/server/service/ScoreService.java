@@ -8,5 +8,4 @@ public interface ScoreService {
     String save(Score score);
     List<Score> retrieve();
 
-
 }

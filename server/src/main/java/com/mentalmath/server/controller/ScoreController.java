@@ -72,6 +72,7 @@ public class ScoreController {
                 )
 			.forEach(json -> arrBuilder.add(json));
             String returnedArray = arrBuilder.build().toString();
+            System.out.println(">>>>>>Returning top 10 data");
 
 		    return ResponseEntity.ok(returnedArray);
             
