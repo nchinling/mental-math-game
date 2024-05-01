@@ -1,8 +1,13 @@
 # Math Dash 
 Math Dash is an arithmetic math game for people of all ages. Players attempt to complete as many arithmetic questions in 1 minute. The motivation behind creating this game is for users to have some short fun and keep their numerical reasoning sharp. 
 
-## Tech Stack
-- 3 levels of difficulty
+## Video
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=WjUzhM26EPY" target="_blank">
+ <img src="http://img.youtube.com/vi/WjUzhM26EPY/mqdefault.jpg" alt="Watch the video" width="600" height="400" border="10" />
+</a>
+
+
+## Features
 - 1 minute gameplay with timer
 - Top 10 scores for the 3 levels will be displayed 
 
@@ -16,3 +21,6 @@ Math Dash is an arithmetic math game for people of all ages. Players attempt to 
 - Provide different levels of difficulty
 - Provide different math games like calculating percentages, ranges 
 
+![alt text](readme_images/character.png)
+![alt text](readme_images/correct.png)
+![alt text](readme_images/score.png)
