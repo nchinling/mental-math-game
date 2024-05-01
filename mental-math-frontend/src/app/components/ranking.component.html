@@ -2,9 +2,9 @@
     <p class="fiery-text">The Greatest of All Time</p>
     <div *ngIf="(topScoreData$ | async) as topScoreData" style="overflow-x:auto;">
         <div *ngIf="topScoreData.length > 0">
-        <h4>Top Score (Level 1)</h4>
+        <h4>Top 10 scores</h4>
         
-            <table>
+            <table class="custom-table">
               <thead>
                 <tr>
                   <th>#</th><th>Name</th><th>Score</th>
@@ -15,8 +15,6 @@
                   <td>{{i+1}}</td>
                   <td>{{ data.name}}</td>
                   <td>{{ data.score }}</td>
-                  <!-- <td>{{ data.date }}</td> -->
-
                 </tr>
               </tbody>
             </table> 

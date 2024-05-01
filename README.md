@@ -1,5 +1,5 @@
-# Math Dash - in progress
-Math Dash is an arithmetic math game for people of all ages. Players attempt to complete as many arithmetic math questions in 1 minute. There are 3 levels to pick from, with varying levels of difficulty. 
+# Math Dash 
+Math Dash is an arithmetic math game for people of all ages. Players attempt to complete as many arithmetic questions in 1 minute. The motivation behind creating this game is for users to have some short fun and keep their numerical reasoning sharp. 
 
 ## Tech Stack
 - 3 levels of difficulty
@@ -10,6 +10,9 @@ Math Dash is an arithmetic math game for people of all ages. Players attempt to 
 - Java (Spring Boot)
 - Angular, Bootstrap
 - Java Persistence API
-- SQL
-- JUnit and Mockito
+- SQL (h2)
+
+## Further improvements
+- Provide different levels of difficulty
+- Provide different math games like calculating percentages, ranges 
 

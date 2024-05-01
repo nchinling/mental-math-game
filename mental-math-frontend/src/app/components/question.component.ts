@@ -23,7 +23,7 @@ export class QuestionComponent implements OnInit {
   disableSubmitButton: boolean = false;
   endMessage!: string
   countdownInterval: any;
-  remainingTime: number = 10; 
+  remainingTime: number = 60; 
   timeUp: boolean = false;
   name!:string
 
