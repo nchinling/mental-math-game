@@ -27,3 +27,10 @@ Dash Math is an arithmetic math game for people of all ages. Players attempt to 
 
 ## Run the programme
 1. git clone https://github.com/nchinling/mental-math-game.git
+2. Setup h2 database
+### Run Angular programme (frontend)
+3. cd mental-math-frontend
+4. ng start
+### Run Spring Boot (backend)
+5. cd server
+6. mvn clean spring-boot:run
