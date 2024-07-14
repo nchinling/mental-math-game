@@ -24,3 +24,6 @@ Dash Math is an arithmetic math game for people of all ages. Players attempt to 
 ![alt text](readme_images/character.png)
 ![alt text](readme_images/correct.png)
 ![alt text](readme_images/score.png)
+
+## Run the programme
+1. git clone https://github.com/nchinling/mental-math-game.git
